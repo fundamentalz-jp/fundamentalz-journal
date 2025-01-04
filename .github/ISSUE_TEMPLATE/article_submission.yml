@@ -1,0 +1,66 @@
+name: 記事投稿
+description: 新しい記事の投稿用テンプレート
+title: "[投稿] "
+labels: ["投稿"]
+body:
+  - type: dropdown
+    id: section
+    attributes:
+      label: セクション
+      description: 投稿するセクションを選択してください
+      options:
+        - 交流報告
+        - 理論研究
+        - レビュー
+        - 思索
+        - レスポンス
+        - アーカイブ
+    validations:
+      required: true
+
+  - type: input
+    id: title
+    attributes:
+      label: タイトル
+      description: 記事のタイトルを入力してください
+    validations:
+      required: true
+
+  - type: textarea
+    id: authors
+    attributes:
+      label: 著者情報
+      description: |
+        以下の形式で著者情報を記載してください：
+        - 氏名：
+        - 所属：
+        - メールアドレス：
+        - 共著者がいる場合は同様に記載
+    validations:
+      required: true
+
+  - type: textarea
+    id: abstract
+    attributes:
+      label: 要旨（日本語）
+      description: 400字程度で記事の概要を記載してください
+    validations:
+      required: true
+
+  - type: textarea
+    id: abstract_en
+    attributes:
+      label: Abstract (English)
+      description: Please provide an abstract in English (around 200 words)
+    validations:
+      required: true
+
+  - type: textarea
+    id: content
+    attributes:
+      label: 本文
+      description: |
+        記事の本文を記載してください。
+        Markdownの使用が可能です。
+    validations:
+      required: true
